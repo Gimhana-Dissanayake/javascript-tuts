@@ -15,7 +15,9 @@ function add() {
   const enteredNumber = getUserNumberInput();
 
   const initialResult = currentResult;
-  currentResult = currentResult + enteredNumber;
+  currentResult += enteredNumber;
+  // alert(currentResult++);
+  // alert(++currentResult);
   createAndWriteOutput("+", initialResult, enteredNumber);
 }
 
@@ -39,7 +41,7 @@ function divide() {
   const enteredNumber = getUserNumberInput();
 
   const initialResult = currentResult;
-  currentResult = currentResult / enteredNumber;
+  currentResult /= enteredNumber;
   createAndWriteOutput("/", initialResult, enteredNumber);
 }
 
