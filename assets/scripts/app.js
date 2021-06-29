@@ -21,9 +21,16 @@ function add() {
   // alert(currentResult++);
   // alert(++currentResult);
   createAndWriteOutput("+", initialResult, enteredNumber);
-  logEntries.push(enteredNumber);
+
+  const logEntry = {
+    operation: "ADD",
+    prevResult: initialResult,
+    number: enteredNumber,
+    result: currentResult,
+  };
+
+  logEntries.push(logEntry);
   console.log(logEntries);
-  console.log(logEntries[0]);
 }
 
 function substract() {
