@@ -2,6 +2,8 @@ const defaultResult = 0;
 
 let currentResult = defaultResult;
 
+let logEntries = [];
+
 function getUserNumberInput() {
   return parseInt(userInput.value);
 }
@@ -19,6 +21,9 @@ function add() {
   // alert(currentResult++);
   // alert(++currentResult);
   createAndWriteOutput("+", initialResult, enteredNumber);
+  logEntries.push(enteredNumber);
+  console.log(logEntries);
+  console.log(logEntries[0]);
 }
 
 function substract() {
