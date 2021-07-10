@@ -29,24 +29,29 @@ function writeToLog(
   console.log(logEntries);
 }
 
-function add() {
+function calculateResult(calculationType) {
   const enteredNumber = getUserNumberInput();
-
   const initialResult = currentResult;
-  currentResult += enteredNumber;
-  createAndWriteOutput("+", initialResult, enteredNumber);
+  let mathOperator;
 
-  writeToLog("ADD", initialResult, enteredNumber, currentResult);
+  if (calculationType === "ADD") {
+    currentResult += enteredNumber;
+    mathOperator = "+";
+  } else {
+    currentResult -= enteredNumber;
+    mathOperator = "-";
+  }
+
+  createAndWriteOutput(mathOperator, initialResult, enteredNumber);
+  writeToLog(calculationType, initialResult, enteredNumber, currentResult);
+}
+
+function add() {
+  calculateResult("ADD");
 }
 
 function substract() {
-  const enteredNumber = getUserNumberInput();
-
-  const initialResult = currentResult;
-  currentResult = currentResult - enteredNumber;
-  createAndWriteOutput("-", initialResult, enteredNumber);
-
-  writeToLog("SUBSTRACT", initialResult, enteredNumber, currentResult);
+  calculateResult("SUBTRACT");
 }
 
 function multiply() {
